@@ -179,7 +179,15 @@ cover: https://gw.alipayobjects.com/zos/alicdn/RT_USzA48/DatePicker.svg
 | showTime.defaultValue | 设置用户选择日期时默认的时分秒，[例子](#components-date-picker-demo-disabled-date) | [dayjs](https://day.js.org/)\[] | \[dayjs(), dayjs()] |  |
 | value(v-model) | 日期 | [dayjs](https://day.js.org/)\[] | - |  |
 
-### formatType
+### RangePicker 事件
+
+| 事件名称 | 说明 | 回调参数 |
+| --- | --- | --- |
+| calendarChange | 待选日期发生变化的回调 | function(dates: \[dayjs, dayjs] \| \[string, string], dateStrings: \[string, string], info: { range:`start`\|`end` }) |
+| change | 日期范围发生变化的回调 | function(dates: \[dayjs, dayjs] \| \[string, string], dateStrings: \[string, string]) |
+| ok | 点击确定按钮的回调 | function(dates: \[dayjs, dayjs] \| \[string, string]) |
+
+#### formatType
 
 ```typescript
 import type { Dayjs } from 'dayjs';
@@ -189,14 +197,6 @@ type GenericFn = (value: Dayjs) => string;
 
 export type FormatType = Generic | GenericFn | Array<Generic | GenericFn>;
 ```
-
-### RangePicker 事件
-
-| 事件名称 | 说明 | 回调参数 |
-| --- | --- | --- |
-| calendarChange | 待选日期发生变化的回调 | function(dates: \[dayjs, dayjs] \| \[string, string], dateStrings: \[string, string], info: { range:`start`\|`end` }) |
-| change | 日期范围发生变化的回调 | function(dates: \[dayjs, dayjs] \| \[string, string], dateStrings: \[string, string]) |
-| ok | 点击确定按钮的回调 | function(dates: \[dayjs, dayjs] \| \[string, string]) |
 
 ## FAQ
 
